@@ -23,6 +23,21 @@ gem "turbo-rails"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
 
+# bootstrap css for styling
+gem "bootstrap", "~> 5.3"
+
+# ???
+gem "autoprefixer-rails"
+
+# font awesosme for icons
+gem "font-awesome-sass", "~> 6.1"
+
+# simple form for easier forms
+gem "simple_form"
+
+# ???
+gem "sassc-rails"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 
