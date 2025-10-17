@@ -3,6 +3,6 @@
    <%=simple_form_for [@list,@bookmark] do |f|%>
     <%= f.association :movie, prompt:"Select a movie" %>
     <%= f.input :comment, placeholder: "Add a comment"%>
-     <%= f.submit "Add movie", class: "btn btn-primary" %>
+    <%= f.submit "Add movie", class: "btn btn-primary" %>
    <%end%>
 </div>
