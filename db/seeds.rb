@@ -7,3 +7,32 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+
+
+require 'httparty'
+
+puts 'Cleaning DB'
+Movie.destroy_all
+puts 'DB clean'
+
+API_KEY ='55826dafdb8fb0ec8fa84b85630577ba'
+IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'
+
+(1..50).each do |page|
+  url = "https://api.themoviedb.org/3/movie/top_rated?api_key=#{API_KEY}&language=en-US&page=#{page}"
+  response = HTTParty.get(url)
+
+  if response.success?
+    movies = response.parsed_response['results']
+    movies.each do |movie_data|
+      Movie.create!(
+          title: movie_data['title'],
+          overview: movie_data['overview'],
+          poster_url: "#{IMAGE_BASE_URL}#{movie_data['poster_path']}",
+          rating: movie_data['vote_average']
+        )
+    end
+  else
+    puts 'Error fetching movie'
+  end
+end

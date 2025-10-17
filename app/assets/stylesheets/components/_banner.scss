@@ -1,0 +1,9 @@
+.banner {
+  width: 100%;
+  height: 20vh;
+  min-height: 600px;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), image-url('banner_photo.png');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat
+}
