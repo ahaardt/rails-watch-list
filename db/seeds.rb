@@ -15,7 +15,7 @@ puts 'Cleaning DB'
 Movie.destroy_all
 puts 'DB clean'
 
-API_KEY = ENV.fetch('TMBD_API_KEY')
+API_KEY = ENV.fetch('TMDB_API_KEY')
 IMAGE_BASE_URL = 'https://image.tmdb.org/t/p/w500'
 
 (1..50).each do |page|
